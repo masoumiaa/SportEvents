@@ -13,4 +13,6 @@
     <string name="description">Description</string>
     <string name="create">Create</string>
     <string name="back">Back</string>
+    <string name="JOIN">join-button</string>
+    <string name="BACK">back-button</string>
 </resources>
