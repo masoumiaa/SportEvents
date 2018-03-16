@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">SportEvents</string>
+    <string name="sporteventlogo">SportEventLogo</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="suscribe">Suscribe</string>
+    <string name="log_in">Log in</string>
     <string name="adress">Adress</string>
     <string name="sport">Sport</string>
     <string name="number_of_player">Number of player</string>
