@@ -39,7 +39,7 @@ public class EventListActivity extends AppCompatActivity {
         // Add the RecyclerItemClickListener, to intercept click on his child
         // recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, this));
 
-        // Button Add to add a new item in the list
+        /* Button Add to add a new item in the list
         Button buttonAdd = (Button) findViewById(R.id.myButtonSimpleAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
 
@@ -48,7 +48,7 @@ public class EventListActivity extends AppCompatActivity {
                 // add a new item at the end of the list
                 add("test " + adapter.getItemCount(), adapter.getItemCount());
             }
-        });
+        });*/
     }
 
     /**

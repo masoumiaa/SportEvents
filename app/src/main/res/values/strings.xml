@@ -13,4 +13,8 @@
     <string name="description">Description</string>
     <string name="create">Create</string>
     <string name="back">Back</string>
+    <string name="slogan">J\'ai un short ..</string>
+    <string name="joinEvent">Join Event</string>
+    <string name="newEvent">Create New Event</string>
+    <string name="muEvents">My Events</string>
 </resources>

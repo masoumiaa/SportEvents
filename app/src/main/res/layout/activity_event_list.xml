@@ -7,16 +7,6 @@
     tools:context="ila.fr.sportevents.EventListActivity">
 
 
-    <Button
-        android:id="@+id/myButtonSimpleAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="add"
-        android:text="Add"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/myListSimple"
         android:layout_width="0dp"
