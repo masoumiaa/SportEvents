@@ -11,16 +11,25 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import ila.fr.dao.Site;
 
-/**
- * Created by gbrossault on 16/03/18.
- */
-
 public class ApiConnector {
+
+    /**
+     * Exemple of use :
+     *    ApiConnector api = new ApiConnector(getApplicationContext());
+     *    List<Site> sites = null;
+     *    try {
+     *      api.getSitesFromApi(getApplicationContext());
+     *      sites = api.getSites();
+     *    } catch (IOException e) {
+     *      e.printStackTrace();
+     *    }
+     */
 
     private final String url = "https://data.rennesmetropole.fr/api/records/1.0/search//?dataset=sites_organismes_sites&facet=nom_site&facet=nom_org_principal&facet=nom_specialite_principale&facet=geo_point_2d&refine.nom_theme_principal=Sport";
     private List<Site> sites;
@@ -32,25 +41,31 @@ public class ApiConnector {
         sites = new ArrayList<>();
     }
 
-    public List<Site> getSites(){
+    public void getSitesFromApi(final Context context) throws IOException {
+        System.out.println("url : "+url);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, this.url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                extractSites(response);
+                if(response.length() != 0){
+                    List<Site> sites = JsonToolBox.getSitesFromJSON(response);
+                    setSites(sites);
+                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //set action on error response
+                System.err.println(error.getLocalizedMessage());
             }
         });
+        requestQueue.add(jsonObjectRequest);
+    }
+
+
+    public List<Site> getSites() {
         return sites;
     }
 
-    private void extractSites(JSONObject jsonObject){
-        if(jsonObject.length() != 0){
-            this.sites = JsonToolBox.getSitesFromJSON(jsonObject);
-        }
+    public void setSites(List<Site> sites) {
+        this.sites = sites;
     }
-
 }
