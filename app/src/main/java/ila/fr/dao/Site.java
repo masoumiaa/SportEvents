@@ -1,21 +1,17 @@
 package ila.fr.dao;
 
-/**
- * Created by gbrossault on 16/03/18.
- */
-
 public class Site {
 
 
     private int id;
     private String nom;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
 
     public Site(){
     }
 
-    public Site(int id, String nom, float latitude, float longitude){
+    public Site(int id, String nom, double latitude, double longitude){
         this.id = id;
         this.nom = nom;
         this.latitude = latitude;
@@ -38,7 +34,7 @@ public class Site {
         this.nom = nom;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
@@ -46,7 +42,7 @@ public class Site {
         this.longitude = longitude;
     }
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
